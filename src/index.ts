@@ -1,7 +1,8 @@
-import {definePlugin} from 'sanity'
+import {definePlugin, LayoutProps} from 'sanity'
 
-import {frontifyAssetSource} from './assetSource'
-import {FrontifyPluginConfig} from './types'
+import {fotowareAssetSource} from './assetSource'
+import {FotowarePluginConfig} from './types'
+import {FotowareAuthProvider} from './FotowareAuthProvider'
 
 /**
  * Usage in `sanity.config.ts` (or .js)
@@ -26,18 +27,22 @@ import {FrontifyPluginConfig} from './types'
  * })
  * ```
  */
-export const frontifyPlugin = definePlugin<FrontifyPluginConfig>((config = {}) => {
+export const fotowarePlugin = definePlugin<FotowarePluginConfig>((config = {}) => {
   return {
+    studio: {
+      components: {
+        layout: (props: LayoutProps) => FotowareAuthProvider(props),
+      },
+    },
     name: 'frontify-dam',
     form: {
       image: {
-        assetSources: [frontifyAssetSource(config)],
+        assetSources: [fotowareAssetSource(config)],
       },
     },
   }
 })
 
 // Export the asset source for direct use
-export {frontifyAssetSource} from './assetSource'
-export {FrontifyAssetSource} from './components/FrontifyAssetSource'
-export type {FrontifyAsset, FrontifyPluginConfig, SanityAsset} from './types'
+export {fotowareAssetSource} from './assetSource'
+export type {FotowarePluginConfig, SanityAsset} from './types'

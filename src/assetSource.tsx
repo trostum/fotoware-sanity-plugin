@@ -1,16 +1,17 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React from 'react'
 
-import {FrontifyAssetSource} from './components/FrontifyAssetSource'
-import {FrontifyIcon} from './components/FrontifyIcon'
-import {FrontifyPluginConfig} from './types'
+import {FotowareAssetSourceComponent} from './components/FotowareAssetSource'
+import {FotowareIcon} from './components/FotowareIcon'
+import {FotowarePluginConfig} from './types'
 
-export const frontifyAssetSource = (config: FrontifyPluginConfig = {}) => {
+export const fotowareAssetSource = (config: FotowarePluginConfig = {}) => {
   return {
-    name: 'frontify',
-    title: 'Frontify',
+    name: 'fotoware',
+    title: 'Fotoware',
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    component: (props: any) => React.createElement(FrontifyAssetSource, {...props, config}),
-    icon: () => React.createElement(FrontifyIcon),
+    component: (props: any) =>
+      React.createElement(FotowareAssetSourceComponent, {...props, config}),
+    icon: () => React.createElement(FotowareIcon),
   }
 }

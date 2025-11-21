@@ -1,17 +1,15 @@
 {
-  "name": "@frontify/sanity-plugin-frontify",
+  "name": "fotoware-sanity-plugin",
   "version": "1.0.0",
-  "description": "Connect your Frontify Digital Asset Management to your Studio schema as a custom field, letting users authenticate, browse, and select brand-approved assets with ease and serve them via CDN. Go further by optimizing and transforming rich media on the fly using our Media Processing API—boosting performance, enhancing brand experiences, and saving your team time and effort.",
+  "description": "Connect your Fotoware Digital Asset Management to your Studio",
   "keywords": [
     "sanity",
     "sanity-plugin"
   ],
   "repository": {
-    "type": "git",
-    "url": "https://github.com/Frontify/sanity-io-plugin.git"
+    "type": "git"
   },
-  "license": "MIT",
-  "author": "Frontify <developer@frontify.com>",
+  "author": "Terje Røstum <trostum@gmail.com>",
   "sideEffects": false,
   "type": "commonjs",
   "exports": {
@@ -39,7 +37,6 @@
     "watch": "pkg-utils watch --strict"
   },
   "dependencies": {
-    "@frontify/frontify-finder": "^3.0.1",
     "@sanity/incompatible-plugin": "^1.0.5",
     "@sanity/ui": "^2.16.7"
   },

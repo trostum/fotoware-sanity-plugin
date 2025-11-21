@@ -1,6 +1,6 @@
 import {AssetSourceComponentProps} from 'sanity'
 
-export interface FrontifyPluginConfig {
+export interface FotowarePluginConfig {
   domain?: string
   allowMultiSelect?: boolean
   filters?: Array<{
@@ -10,14 +10,11 @@ export interface FrontifyPluginConfig {
   }>
 }
 
-// Re-export FrontifyAsset from the module
-export type {FrontifyAsset} from '@frontify/frontify-finder'
-
-export interface FrontifyAssetSourceProps extends AssetSourceComponentProps {
+export interface FotowareAssetSourceProps extends AssetSourceComponentProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onSelect: (assets: any[]) => void
   onClose: () => void
-  config?: FrontifyPluginConfig
+  config?: FotowarePluginConfig
 }
 
 export interface SanityAsset {
